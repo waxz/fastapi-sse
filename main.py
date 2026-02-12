@@ -28,12 +28,10 @@ def get_new_messages() -> Iterable:
             "data": json.dumps(
                 {
                     "message": "test message",
-                    "datetime": datetime.datetime.now().isoformat(
-                        sep="T", timespec="auto"
-                    ),
+                    "datetime": datetime.datetime.now(datetime.timezone.utc).isoformat(),
                 }
             ),
-            "id": uuid.uuid4(),
+            "id": str(uuid.uuid4()),
         }
     ]
 

@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Minimalistic SSE Frontend</title>
+  <meta> </meta>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -45,6 +46,7 @@
         <th>Event ID</th>
         <th>Message</th>
         <th>Date & Time</th>
+        <th>Delay(ms)</th>
       </tr>
     </thead>
     <tbody id="data-list"></tbody>
@@ -56,7 +58,10 @@
     eventSource.addEventListener('new_message', event => {
       const { message, datetime } = JSON.parse(event.data);
       const row = document.createElement('tr');
-      row.innerHTML = `<td>${event.lastEventId}</td><td>${message}</td><td>${datetime}</td>`;
+      const tr = new Date(datetime);
+      const tn = new Date(Date.now());
+      const delay = (tn - tr);
+      row.innerHTML = `<td>${event.lastEventId}</td><td>${message}</td><td>${datetime}</td><td>${delay}</td>`;
       dataList.appendChild(row);
     });
   </script>
