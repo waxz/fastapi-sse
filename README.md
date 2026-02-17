@@ -1,3 +1,12 @@
+---
+title: Server-Sent Events (SSE) Demo with FastAPI
+emoji: 📚
+colorFrom: indigo
+colorTo: gray
+sdk: docker
+pinned: false
+---
+
 # Server-Sent Events (SSE) Demo with FastAPI
 
 This is a simple demonstration of Server-Sent Events (SSE) using FastAPI. It provides a minimalistic frontend that displays real-time updates from the server in a table format.
